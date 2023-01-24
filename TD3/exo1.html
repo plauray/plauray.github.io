@@ -1,0 +1,34 @@
+<canvas id="myCanvas"></canvas>
+
+<script>
+    var canvas = document.getElementById("myCanvas");
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    var ctx = canvas.getContext("2d");
+
+    var img = new Image();
+    img.onload = function () {
+        ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+        ctx.beginPath();
+        //RECTANGLE DE LA MAISON
+        ctx.fillStyle = 'rgb(200, 0, 0)';
+        ctx.fillRect(1100, 700, 150, 150);
+        //RECTANGLE DE LA PORTE
+        ctx.fillStyle = 'rgb(0, 0, 0)';
+        ctx.fillRect(1150, 760, 50, 80);
+        //TOIT DE LA MAISON
+        ctx.moveTo(1175, 600);
+        ctx.lineTo(1100, 700);
+        ctx.lineTo(1250, 700);
+        ctx.fillStyle = "blue";
+        ctx.fill();
+        //SOLEIL
+        ctx.beginPath();
+        ctx.arc(100, 100, 50, 0, 2 * Math.PI);
+        ctx.fillStyle = "yellow";
+        ctx.fill();
+    };
+    img.src = "myImage.jpg";
+
+
+</script>
